@@ -16,7 +16,7 @@ router.post("/user/sing_up", async (req, res) => {
     const user = await User.findOne({ email: req.fields.email });
 
     if (user) {
-      res.status(401).json({ error: error.message });
+      res.json({ message: "This email already has an account." });
     } else {
       if (req.fields.email && req.fields.password && req.fields.username) {
         // Générer le Token et encrypter le mot de pass \\
