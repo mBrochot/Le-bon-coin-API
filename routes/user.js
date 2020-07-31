@@ -37,12 +37,12 @@ router.post("/user/sing_up", async (req, res) => {
 
         await newUser.save();
 
-        res.status(200).json({
-          _id: newUser._id,
-          email: newUser.email,
-          token: newUser.token,
-          account: newUser.account,
-        });
+        // res.status(200).json({
+        //   _id: newUser._id,
+        //   email: newUser.email,
+        //   token: newUser.token,
+        //   account: newUser.account,
+        // });
       } else {
         res.status(400).json({ error: error.message });
       }
