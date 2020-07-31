@@ -16,7 +16,7 @@ router.post("/user/sing_up", async (req, res) => {
     const user = await User.findOne({ email: req.fields.email });
 
     if (user) {
-      res.status(401).json({ message: error.message });
+      res.status(401).json({ error: error.message });
     } else {
       if (req.fields.email && req.fields.password && req.fields.username) {
         // Générer le Token et encrypter le mot de pass \\
@@ -37,12 +37,12 @@ router.post("/user/sing_up", async (req, res) => {
 
         await newUser.save();
 
-        // res.status(200).json({
-        //   _id: newUser._id,
-        //   email: newUser.email,
-        //   token: newUser.token,
-        //   account: newUser.account,
-        // });
+        res.status(200).json({
+          _id: newUser._id,
+          email: newUser.email,
+          token: newUser.token,
+          account: newUser.account,
+        });
       } else {
         res.status(400).json({ error: error.message });
       }
