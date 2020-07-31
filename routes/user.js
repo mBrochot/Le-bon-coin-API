@@ -16,7 +16,7 @@ router.post("/user/sing_up", async (req, res) => {
     const user = await User.findOne({ email: req.fields.email });
 
     if (user) {
-      res.json({ message: "This email already has an account" });
+      res.status(401).json({ message: error.message });
     } else {
       if (req.fields.email && req.fields.password && req.fields.username) {
         // Générer le Token et encrypter le mot de pass \\
@@ -44,7 +44,7 @@ router.post("/user/sing_up", async (req, res) => {
           account: newUser.account,
         });
       } else {
-        res.status(400).json({ message: "Missing parameters" });
+        res.status(400).json({ error: error.message });
       }
     }
   } catch (error) {

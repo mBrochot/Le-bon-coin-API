@@ -23,5 +23,5 @@ app.use(userRoutes);
 app.use(offerRoutes);
 
 app.listen(process.env.PORT, () => {
-  console.log("Server starteddd");
+  console.log("Server started");
 });
