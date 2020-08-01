@@ -9,9 +9,9 @@ const uid2 = require("uid2");
 const User = require("../models/User");
 const Offer = require("../models/Offer");
 
-//------------Page Sing Up-------------\\
+//------------Page Sign Up-------------\\
 
-router.post("/user/sing_up", async (req, res) => {
+router.post("/user/sign_up", async (req, res) => {
   try {
     const user = await User.findOne({ email: req.fields.email });
 
