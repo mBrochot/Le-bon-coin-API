@@ -17,10 +17,12 @@ mongoose.connect(process.env.MONGODB_URI, {
 //--------Import des routes---------\\
 const userRoutes = require("./routes/user");
 const offerRoutes = require("./routes/offer");
+const payRoutes = require("./routes/pay");
 
 //-----Initialisation des routes-----\\
 app.use(userRoutes);
 app.use(offerRoutes);
+app.use(payRoutes);
 
 app.listen(process.env.PORT, () => {
   console.log("Server started");
