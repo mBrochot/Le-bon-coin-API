@@ -51,7 +51,7 @@ See demo: https://leboncoin-copy.netlify.app/
 		src="https://raw.githubusercontent.com/mBrochot/leboncoin-copy/master/preview/capture-leboncoin.gif">
 </p>
 
-## Installation and usage
+## Installation and usage.
 
 ### Running the project
 
